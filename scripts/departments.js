@@ -72,5 +72,3 @@ const departments = {
 }
 
 console.log(departments);
-
-console.log(departments.sales.numberOfEmployees);
