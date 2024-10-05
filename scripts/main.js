@@ -71,18 +71,18 @@ console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager. '
 
 
 //OPDRACHT 4A
-const userInput = prompt('Over welke afdeling wil je meer informatie? Kies uit: marketing / sales / customer-service');
-console.log(userInput);
+const inputDepartment = prompt('Over welke afdeling wil je meer informatie? Kies uit: marketing / sales / customer-service');
+//console.log(inputDepartment);
 
 let chosenDepartment = ' ';
 
-if (userInput === 'marketing') {
+if (inputDepartment === 'marketing') {
     chosenDepartment = 'marketing';
     console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
-} else if (userInput === 'sales') {
+} else if (inputDepartment === 'sales') {
     chosenDepartment = `sales`;
     console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
-} else if ((userInput === 'customer-service') || (userInput === 'customer service')) {
+} else if ((inputDepartment === 'customer-service') || (inputDepartment=== 'customer service')) {
     chosenDepartment = 'customer-service';
     console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
 } else {
@@ -90,17 +90,30 @@ if (userInput === 'marketing') {
 }
 
 
-const jobSelection = prompt('Je koos ´+ userInput + '.Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.' +'\n ' +
-'0: ' + departments[chosendepartment].jobs[0].title + '\n' +
-'1: ' + departments[chosendepartment].jobs[1].title + '\n' +
-'2: ' + departments[chosendepartment].jobs[2].title + '\n' +
-'3: ' + departments[chosendepartment].jobs[3].title);
+const jobSelection = prompt('Je koos ' + chosenDepartment +'. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.'+' \n'+
+'0: ' + departments[chosenDepartment].jobs[0].title + '\n' +
+'1: ' + departments[chosenDepartment].jobs[1].title + '\n' +
+'2: ' + departments[chosenDepartment].jobs[2].title + '\n' +
+'3: ' + departments[chosenDepartment].jobs[3].title);
 
-console.log(jobSelection);
+//console.log(jobSelection);
 
-//const choiceMarketing = prompt('Je koos marketing. Over welke functie wil je meer weten? Voor een getal in tussen 0 en 3 in.' + '\n' +
-//  '0: ' + departments.marketing.jobs[0].title + '\n' +
-//'1: ' + departments.marketing.jobs[1].title + '\n' +
-// '2: ' + departments.marketing.jobs[2].title + '\n' +
-//'3: ' + departments.marketing.jobs[3].title);
-//console.log(choiceMarketing);
+switch (jobSelection) {
+ case '0':
+     console.log('Je koos ' + departments[chosenDepartment].jobs[0].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[0].description + '.');
+   break;
+case '1':
+ console.log('Je koos ' + departments[chosenDepartment].jobs[1].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[1].description + '.');
+break;
+case '2':
+ console.log('Je koos ' + departments[chosenDepartment].jobs[2].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[2].description + '.');
+break;
+case '3':
+ console.log('Je koos ' + departments[chosenDepartment].jobs[3].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[3].description + '.');
+break;
+default:
+ console.log('Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.');
+}
+
+
+//OPDRACHT 5 BONUS
