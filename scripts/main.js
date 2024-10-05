@@ -1,17 +1,18 @@
 //OPDRACHT 1
 
-console.log(departments);
+//console.log(departments);
 //Opdracht 1a:
-console.log('De afdeling Sales heeft ' + departments.sales.numberOfEmployees + ' employees');
+//console.log('De afdeling Sales heeft ' + departments.sales.numberOfEmployees + ' employees');
 
 //Opdracht 1b
-console.log('Marketing is een leuke afdeling om te werken.' + departments.marketing.description);
+//console.log('Marketing is een leuke afdeling om te werken.' + departments.marketing.description);
 
 //Opdracht 1c:
-console.log('De afdeling Customer service heeft ' + departments["customer-service"].numberOfEmployees + ' medewerkers');
+//console.log('De afdeling Customer service heeft ' + departments["customer-service"].numberOfEmployees + ' medewerkers');
 
 //  Opdracht 1d:
-console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager. ' + departments.sales.jobs[1].description + ' .');
+//console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager. ' + departments.sales.jobs[1].description + ' .');
+
 
 
 //OPDRACHT 2
@@ -72,7 +73,6 @@ console.log('Sales is een uitdagende afdeling om te werken als Verkoopmanager. '
 
 //OPDRACHT 4A
 const inputDepartment = prompt('Over welke afdeling wil je meer informatie? Kies uit: marketing / sales / customer-service');
-//console.log(inputDepartment);
 
 let chosenDepartment = ' ';
 
@@ -96,19 +96,23 @@ const jobSelection = prompt('Je koos ' + chosenDepartment +'. Over welke functie
 '2: ' + departments[chosenDepartment].jobs[2].title + '\n' +
 '3: ' + departments[chosenDepartment].jobs[3].title);
 
-//console.log(jobSelection);
+let chosenJob = ' ';
 
 switch (jobSelection) {
  case '0':
+     chosenJob = departments[chosenDepartment].jobs[0];
      console.log('Je koos ' + departments[chosenDepartment].jobs[0].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[0].description + '.');
    break;
 case '1':
+    chosenJob = departments[chosenDepartment].jobs[1];
  console.log('Je koos ' + departments[chosenDepartment].jobs[1].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[1].description + '.');
 break;
 case '2':
+    chosenJob = departments[chosenDepartment].jobs[2];
  console.log('Je koos ' + departments[chosenDepartment].jobs[2].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[2].description + '.');
 break;
 case '3':
+    chosenJob = departments[chosenDepartment].jobs[3];
  console.log('Je koos ' + departments[chosenDepartment].jobs[3].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[3].description + '.');
 break;
 default:
@@ -116,4 +120,13 @@ default:
 }
 
 
+
 //OPDRACHT 5 BONUS
+
+//document.getElementById('role-title').textContent = 'Nicolette van Zeijl';
+//document.getElementById('department-description').textContent = 'pannenkoeken';
+
+document.getElementById('role-title').textContent = inputDepartment;
+document.getElementById('department-description').textContent = departments[chosenDepartment].description;
+document.getElementById('role-description').textContent = chosenJob.description;
+//document.getElementById('error-message').textContent = ;
