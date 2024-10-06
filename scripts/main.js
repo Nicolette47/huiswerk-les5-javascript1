@@ -86,38 +86,43 @@ if (inputDepartment === 'marketing') {
     chosenDepartment = 'customer-service';
     console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
 } else {
-    console.error('Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.');
+    const errorMessage1 = 'Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.';
+    console.error(errorMessage1);
+    document.getElementById('error-message').textContent = errorMessage1;
 }
 
-
 const jobSelection = prompt('Je koos ' + chosenDepartment +'. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.'+' \n'+
-'0: ' + departments[chosenDepartment].jobs[0].title + '\n' +
-'1: ' + departments[chosenDepartment].jobs[1].title + '\n' +
-'2: ' + departments[chosenDepartment].jobs[2].title + '\n' +
-'3: ' + departments[chosenDepartment].jobs[3].title);
+    '0: ' + departments[chosenDepartment].jobs[0].title + '\n' +
+    '1: ' + departments[chosenDepartment].jobs[1].title + '\n' +
+    '2: ' + departments[chosenDepartment].jobs[2].title + '\n' +
+    '3: ' + departments[chosenDepartment].jobs[3].title);
 
 let chosenJob = ' ';
 
 switch (jobSelection) {
- case '0':
-     chosenJob = departments[chosenDepartment].jobs[0];
-     console.log('Je koos ' + departments[chosenDepartment].jobs[0].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[0].description + '.');
-   break;
-case '1':
-    chosenJob = departments[chosenDepartment].jobs[1];
- console.log('Je koos ' + departments[chosenDepartment].jobs[1].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[1].description + '.');
-break;
-case '2':
-    chosenJob = departments[chosenDepartment].jobs[2];
- console.log('Je koos ' + departments[chosenDepartment].jobs[2].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[2].description + '.');
-break;
-case '3':
-    chosenJob = departments[chosenDepartment].jobs[3];
- console.log('Je koos ' + departments[chosenDepartment].jobs[3].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[3].description + '.');
-break;
-default:
- console.log('Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.');
+    case '0':
+        chosenJob = departments[chosenDepartment].jobs[0];
+        console.log('Je koos ' + departments[chosenDepartment].jobs[0].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[0].description + '.');
+        break;
+    case '1':
+        chosenJob = departments[chosenDepartment].jobs[1];
+        console.log('Je koos ' + departments[chosenDepartment].jobs[1].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[1].description + '.');
+        break;
+    case '2':
+        chosenJob = departments[chosenDepartment].jobs[2];
+        console.log('Je koos ' + departments[chosenDepartment].jobs[2].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[2].description + '.');
+        break;
+    case '3':
+        chosenJob = departments[chosenDepartment].jobs[3];
+        console.log('Je koos ' + departments[chosenDepartment].jobs[3].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[3].description + '.');
+        break;
+    default:
+        const errorMessage2 = 'Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.';
+        console.log(errorMessage2);
+        document.getElementById('error-message').textContent = errorMessage2;
 }
+
+
 
 
 
@@ -126,7 +131,8 @@ default:
 //document.getElementById('role-title').textContent = 'Nicolette van Zeijl';
 //document.getElementById('department-description').textContent = 'pannenkoeken';
 
+if ((jobSelection >= 0) && (jobSelection <=3)) {
 document.getElementById('role-title').textContent = inputDepartment;
 document.getElementById('department-description').textContent = departments[chosenDepartment].description;
 document.getElementById('role-description').textContent = chosenJob.description;
-//document.getElementById('error-message').textContent = ;
+}
