@@ -78,50 +78,49 @@ let chosenDepartment = ' ';
 
 if (inputDepartment === 'marketing') {
     chosenDepartment = 'marketing';
-    console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
+    console.log(`${chosenDepartment} is een leuke afdeling om te werken. Er werken op dit moment ${departments[chosenDepartment].numberOfEmployees} medewerkers`);
 } else if (inputDepartment === 'sales') {
     chosenDepartment = `sales`;
-    console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
+    console.log(`${chosenDepartment} is een leuke afdeling om te werken. Er werken op dit moment ${departments[chosenDepartment].numberOfEmployees} medewerkers`);
 } else if ((inputDepartment === 'customer-service') || (inputDepartment=== 'customer service')) {
     chosenDepartment = 'customer-service';
-    console.log(chosenDepartment + ' is een leuke afdeling om te werken. Er werken op dit moment ' + departments[chosenDepartment].numberOfEmployees + ' medewerkers');
+    console.log(`${chosenDepartment} is een leuke afdeling om te werken. Er werken op dit moment ${ departments[chosenDepartment].numberOfEmployees} medewerkers`);
 } else {
-    const errorMessage1 = 'Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.';
+    const errorMessage1 ='Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.';
     console.error(errorMessage1);
     document.getElementById('error-message').textContent = errorMessage1;
 }
 
-const jobSelection = prompt('Je koos ' + chosenDepartment +'. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.'+' \n'+
-    '0: ' + departments[chosenDepartment].jobs[0].title + '\n' +
-    '1: ' + departments[chosenDepartment].jobs[1].title + '\n' +
-    '2: ' + departments[chosenDepartment].jobs[2].title + '\n' +
-    '3: ' + departments[chosenDepartment].jobs[3].title);
+const jobSelection = prompt(`Je koos ${chosenDepartment}. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in:
+    0: ${departments[chosenDepartment].jobs[0].title}
+    1: ${departments[chosenDepartment].jobs[1].title }
+    2: ${departments[chosenDepartment].jobs[2].title}
+    3: ${departments[chosenDepartment].jobs[3].title}`);
 
 let chosenJob = ' ';
 
 switch (jobSelection) {
     case '0':
         chosenJob = departments[chosenDepartment].jobs[0];
-        console.log('Je koos ' + departments[chosenDepartment].jobs[0].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[0].description + '.');
+        console.log(`Je koos ${departments[chosenDepartment].jobs[0].title}. Een uitdagende rol! ${ departments[chosenDepartment].jobs[0].description}`);
         break;
     case '1':
         chosenJob = departments[chosenDepartment].jobs[1];
-        console.log('Je koos ' + departments[chosenDepartment].jobs[1].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[1].description + '.');
+        console.log(`Je koos ${departments[chosenDepartment].jobs[1].title}. Een uitdagende rol!${departments[chosenDepartment].jobs[1].description}.`);
         break;
     case '2':
         chosenJob = departments[chosenDepartment].jobs[2];
-        console.log('Je koos ' + departments[chosenDepartment].jobs[2].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[2].description + '.');
+        console.log(`Je koos ${departments[chosenDepartment].jobs[2].title}. Een uitdagende rol! ${departments[chosenDepartment].jobs[2].description}.`);
         break;
     case '3':
         chosenJob = departments[chosenDepartment].jobs[3];
-        console.log('Je koos ' + departments[chosenDepartment].jobs[3].title + '. Een uitdagende rol! ' + departments[chosenDepartment].jobs[3].description + '.');
+        console.log(`Je koos ${departments[chosenDepartment].jobs[3].title}. Een uitdagende rol! ${ departments[chosenDepartment].jobs[3].description}.`);
         break;
     default:
         const errorMessage2 = 'Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.';
         console.log(errorMessage2);
         document.getElementById('error-message').textContent = errorMessage2;
 }
-
 
 
 
